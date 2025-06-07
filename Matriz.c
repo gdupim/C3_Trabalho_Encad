@@ -255,3 +255,122 @@ void ImprimirMatriz(Matriz *mat)
         auxColuna = auxLinha;       // volta para printar o primeiro da próxima linha
     }
 }
+
+Matriz *SomaMatriz(Matriz *mat1, Matriz *mat2)
+{
+    int linhas = VerificarLinhas(mat1);
+    int colunas = VerificarColunas(mat1);
+
+    if (mat1 == NULL || mat2 == NULL)
+    {
+        printf("Alguma das duas matrizes nao existe");
+        return NULL;
+    }
+
+    if (linhas != VerificarLinhas(mat2) || colunas != VerificarColunas(mat2))
+    {
+        printf("A ordem de linhas e colunas das duas devem ser igual");
+        return NULL;
+    }
+
+    Matriz *soma = CriarMatriz(linhas, colunas);
+
+    if (soma == NULL)
+    {
+        printf("Erro ao alocar memoria");
+        return NULL;
+    }
+
+    Matriz *moveColuna = mat1;
+    Matriz *moveColuna2 = mat2;
+    Matriz *moveColunaS = soma;
+    Matriz *desceLinha = moveColuna;
+    Matriz *desceLinha2 = moveColuna2;
+    Matriz *desceLinhaS = soma;
+
+    while (desceLinha != NULL)
+    {
+        while (moveColuna != NULL)
+        {
+            moveColunaS->valor = moveColuna->valor + moveColuna2->valor;
+            moveColuna = moveColuna->direita;
+            moveColuna2 = moveColuna2->direita;
+            moveColunaS = moveColunaS->direita;
+        }
+
+        desceLinha = desceLinha->baixo;
+        desceLinha2 = desceLinha2->baixo;
+        desceLinhaS = desceLinhaS->baixo;
+
+        moveColuna = desceLinha;
+        moveColuna2 = desceLinha2;
+        moveColunaS = desceLinhaS;
+    }
+
+    return soma;
+}
+
+Matriz *SubtracaoMatriz(Matriz *mat1, Matriz *mat2)
+{
+    int linhas = VerificarLinhas(mat1);
+    int colunas = VerificarColunas(mat1);
+
+    if (mat1 == NULL || mat2 == NULL)
+    {
+        printf("Alguma das duas matrizes nao existe");
+        return NULL;
+    }
+
+    if (linhas != VerificarLinhas(mat2) || colunas != VerificarColunas(mat2))
+    {
+        printf("A ordem de linhas e colunas das duas devem ser igual");
+        return NULL;
+    }
+
+    Matriz *sub = CriarMatriz(linhas, colunas);
+
+    if (sub == NULL)
+    {
+        printf("Erro ao alocar memoria");
+        return NULL;
+    }
+
+    Matriz *moveColuna = mat1;
+    Matriz *moveColuna2 = mat2;
+    Matriz *moveColunaS = sub;
+    Matriz *desceLinha = moveColuna;
+    Matriz *desceLinha2 = moveColuna2;
+    Matriz *desceLinhaS = sub;
+
+    while (desceLinha != NULL)
+    {
+        while (moveColuna != NULL)
+        {
+            moveColunaS->valor = moveColuna->valor - moveColuna2->valor;
+            moveColuna = moveColuna->direita;
+            moveColuna2 = moveColuna2->direita;
+            moveColunaS = moveColunaS->direita;
+        }
+
+        desceLinha = desceLinha->baixo;
+        desceLinha2 = desceLinha2->baixo;
+        desceLinhaS = desceLinhaS->baixo;
+
+        moveColuna = desceLinha;
+        moveColuna2 = desceLinha2;
+        moveColunaS = desceLinhaS;
+    }
+
+    return sub;
+}
+
+// funções a parte:
+
+void limparTela()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}

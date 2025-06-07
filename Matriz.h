@@ -18,6 +18,7 @@ typedef struct Matriz
     struct Matriz *direita;
 } Matriz;
 
+// funções de matrizes
 Matriz *CriarMatriz(int i, int j);
 int VerificarLinhas(Matriz *matriz);
 int VerificarColunas(Matriz *matriz);
@@ -27,5 +28,12 @@ Matriz *ConsultarValor(Matriz *mat, int i, int j);
 Matriz *BuscarValor(Matriz *mat, int valor);
 Matriz *ImprimirVizinhos(Matriz *mat, int i, int j);
 void ImprimirMatriz(Matriz *mat);
+Matriz *BuscarValor(Matriz *mat, int valor);
+Matriz *ImprimirVizinhos(Matriz *mat, int i, int j);
+Matriz *SomaMatriz(Matriz *mat1, Matriz *mat2);
+Matriz *SubtracaoMatriz(Matriz *mat1, Matriz *mat2);
+
+// funções a parte
+void limparTela();
 
 #endif // MATRIZ_H
