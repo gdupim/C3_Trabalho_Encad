@@ -1,5 +1,5 @@
 /*
- *Alunos:
+ * Alunos:
  *      Ian Batista Fornaziero RA: 2677210
  *      Gabriel Augusto Dupim RA: 2651408
  */
@@ -21,101 +21,115 @@ int main(void)
 
     do
     {
-        printf("\n MENU PRINCIPAL \n");
-        printf("1 - Criar matriz\n");
-        printf("2 - Verificar a quantidade de linhas\n");
-        printf("3 - Verificar a quantidade de colunas\n");
-        printf("4 - Inserir valor na matriz\n");
-        printf("5 - Consultar valor por linha e coluna\n");
-        printf("6 - Buscar Valor na matriz\n");
-        printf("7 - Imprimir Matriz\n");
-        printf("8 - Imprimir vizinhos do no\n");
-        printf("9 - Somar matrizes\n");
-        printf("10 - Subtrair matrizes\n");
-        printf("0 - Sair\n");
+        limparTela();
+
+        printf(GREEN "\t/ MENU PRINCIPAL /\n" RESET);
+        printf("[01] - Criar matriz.\n");
+        printf("[02] - Verificar a quantidade de linhas.\n");
+        printf("[03] - Verificar a quantidade de colunas.\n");
+        printf("[04] - Inserir valor na matriz.\n");
+        printf("[05] - Consultar valor por linha e coluna.\n");
+        printf("[06] - Buscar Valor na matriz.\n");
+        printf("[07] - Imprimir Matriz.\n");
+        printf("[08] - Imprimir vizinhos do no.\n");
+        printf("[09] - Somar matrizes.\n");
+        printf("[10] - Subtrair matrizes.\n");
+        printf("[00] - Sair.\n");
         printf("Escolha algum menu: ");
         scanf("%d", &escolha);
         getchar();
+
+        limparTela();
 
         switch (escolha)
         {
         case 1:
         {
-            printf("Digite o numero de linhas: ");
+            printf(GREEN "\t/ CRIAR MATRIZ /\n" RESET);
+            printf("\nDigite o numero de linhas: ");
             scanf("%d", &i);
             getchar();
-            printf("Digite o numero de colunas: ");
+            printf("\nDigite o numero de colunas: ");
             scanf("%d", &j);
             getchar();
 
             if (matriz == NULL)
             {
                 matriz = CriarMatriz(i, j);
-                printf("Matriz criada com sucesso: \n");
+                printf("\nMatriz criada com sucesso: \n");
                 ImprimirMatriz(matriz);
             }
             else if (matriz2 == NULL)
             {
                 matriz2 = CriarMatriz(i, j);
-                printf("Matriz criada com sucesso: \n");
+                printf("\nMatriz criada com sucesso: \n");
                 ImprimirMatriz(matriz2);
             }
             else
             {
-                printf("As duas matrizes ja foram criadas\n");
+                printf(RED "\nAs duas matrizes ja foram criadas...\n" RESET);
             }
+
+            espera();
         }
         break;
         case 2:
         {
-            printf("Deseja verificar da matriz 1 ou 2: ");
+            printf(GREEN "\t/ VERIFICAR LINHAS /\n" RESET);
+            printf("\nDeseja verificar da matriz 1 ou 2: ");
             scanf("%d", &escolha);
             getchar();
 
             if (escolha == 1)
             {
-                printf("A quantidade de linhas e:");
+                printf("\nQuantidade de linhas: ");
                 printf("%d\n", VerificarLinhas(matriz));
             }
             else if (escolha == 2)
             {
-                printf("A quantidade de linhas e:");
+                printf("\nQuantidade de linhas: ");
                 printf("%d\n", VerificarLinhas(matriz2));
             }
+
+            espera();
         }
         break;
         case 3:
         {
-            printf("Deseja verificar da matriz 1 ou 2: ");
+            printf(GREEN "\t/ VERIFICAR COLUNAS /\n" RESET);
+            printf("\nDeseja verificar da matriz 1 ou 2: ");
             scanf("%d", &escolha);
             getchar();
 
             if (escolha == 1)
             {
-                printf("A quantidade de colunas e:");
+                printf("\nQuantidade de colunas: ");
                 printf("%d\n", VerificarColunas(matriz));
                 getchar();
             }
             else if (escolha == 2)
             {
-                printf("A quantidade de colunas e:");
+                printf("\nQuantidade de colunas: ");
                 printf("%d\n", VerificarColunas(matriz2));
                 getchar();
             }
+
+            espera();
         }
         break;
         case 4:
         {
-            printf("Deseja inserir na matriz 1 ou 2: ");
+            printf(GREEN "\t/ INSERIR VALOR /\n" RESET);
+            printf("\nDeseja inserir na matriz 1 ou 2: ");
             scanf("%d", &escolha);
             getchar();
 
-            printf("Insira a linha e a coluna a ser inserido: ");
+            printf("\nInsira a linha e a coluna a ser inserido: ");
             scanf("%d", &i);
             getchar();
             scanf("%d", &j);
             getchar();
-            printf("Agora insira o valor a ser inserido: ");
+            printf("\nAgora insira o valor a ser inserido: ");
             scanf("%d", &valor);
             getchar();
             if (escolha == 1)
@@ -126,15 +140,18 @@ int main(void)
             {
                 InserirValor(matriz2, i, j, valor);
             }
+
+            espera();
         }
         break;
         case 5:
         {
-            printf("Deseja verificar da matriz 1 ou 2: ");
+            printf(GREEN "\t/ CONSULTAR VALOR /\n" RESET);
+            printf("\nDeseja verificar da matriz 1 ou 2: ");
             scanf("%d", &escolha);
             getchar();
 
-            printf("Insira a linha e a coluna a ser verificado");
+            printf("\nInsira a linha e a coluna a ser verificado: ");
             scanf("%d", &i);
             getchar();
             scanf("%d", &j);
@@ -143,21 +160,24 @@ int main(void)
             if (escolha == 1)
             {
                 no = ConsultarValor(matriz, i, j);
-                printf("O valor do no e: %d", no->valor);
+                printf("\nValor do no: %d", no->valor);
             }
             else if (escolha == 2)
             {
                 no = ConsultarValor(matriz2, i, j);
-                printf("O valor do no e: %d", no->valor);
+                printf("\nValor do no: %d", no->valor);
             }
+
+            espera();
         }
         break;
         case 6:
         {
-            printf("Deseja verificar da matriz 1 ou 2: ");
+            printf(GREEN "\t/ BUSCAR VALOR /\n" RESET);
+            printf("\nDeseja verificar da matriz 1 ou 2: ");
             scanf("%d", &escolha);
             getchar();
-            printf("Insira o valor a ser buscado: ");
+            printf("\nInsira o valor a ser buscado: ");
             scanf("%d", &valor);
 
             if (escolha == 1)
@@ -168,11 +188,14 @@ int main(void)
             {
                 BuscarValor(matriz2, valor);
             }
+
+            espera();
         }
         break;
         case 7:
         {
-            printf("Deseja imprimir a matriz 1 ou 2: ");
+            printf(GREEN "\t/ IMPRIMIR MATRIZ /\n" RESET);
+            printf("\nDeseja imprimir a matriz 1 ou 2: ");
             scanf("%d", &escolha);
             getchar();
 
@@ -184,14 +207,17 @@ int main(void)
             {
                 ImprimirMatriz(matriz2);
             }
+
+            espera();
         }
         break;
         case 8:
         {
-            printf("Deseja verificar da matriz 1 ou 2: ");
+            printf(GREEN "\t/ IMPRIMIR VIZINHOS /\n" RESET);
+            printf("\nDeseja verificar da matriz 1 ou 2: ");
             scanf("%d", &escolha);
             getchar();
-            printf("Insira a linha e a coluna a ser verificado");
+            printf("\nInsira a linha e a coluna a ser verificado: ");
             scanf("%d", &i);
             getchar();
             scanf("%d", &j);
@@ -205,28 +231,40 @@ int main(void)
             {
                 ImprimirVizinhos(matriz2, i, j);
             }
+
+            espera();
         }
         break;
         case 9:
         {
+            printf(GREEN "\t/ SOMAR MATRIZES /\n" RESET);
             soma = SomaMatriz(matriz, matriz2);
-            printf("A matriz somada e: \n");
+            printf("\nA matriz somada e: \n");
             ImprimirMatriz(soma);
+
+            espera();
         }
         break;
         case 10:
         {
+            printf(GREEN "\t/ SUBTRAIR MATRIZES /\n" RESET);
             sub = SubtracaoMatriz(matriz, matriz2);
-            printf("A matriz subtraida e: \n");
+            printf("\nA matriz subtraida e: \n");
             ImprimirMatriz(sub);
+
+            espera();
         }
         break;
         case 0:
-            printf("Saindo...\n");
+            printf(GREEN "\nSaindo...\n" RESET);
             continuar = 0;
+
+            espera();
             break;
         default:
-            printf("Escolha invalida, tente novamente\n");
+            printf(RED "\nEscolha invalida, tente novamente...\n" RESET);
+
+            espera();
             break;
         }
     } while (continuar);

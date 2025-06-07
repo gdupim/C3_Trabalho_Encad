@@ -1,5 +1,5 @@
 /*
- *Alunos:
+ * Alunos:
  *      Nome: Ian Batista Fornaziero / RA: 2677210
  *      Nome: Gabriel Augusto Dupim / RA: 2651408
  */
@@ -373,4 +373,10 @@ void limparTela()
 #else
     system("clear");
 #endif
+}
+
+void espera()
+{
+    printf("\nPressione qualquer tecla para continuar...");
+    getchar();
 }

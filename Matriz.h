@@ -35,5 +35,6 @@ Matriz *SubtracaoMatriz(Matriz *mat1, Matriz *mat2);
 
 // funções a parte
 void limparTela();
+void espera();
 
 #endif // MATRIZ_H
