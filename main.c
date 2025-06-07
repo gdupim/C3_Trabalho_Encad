@@ -49,15 +49,18 @@ int main(void)
     BuscarValor(matriz, 10);
 
     // 6.
-    printf("\n\nQuais são os vizinhos do nó (3, 2):");
+    printf("\n\nQuais são os vizinhos do nó (3, 2):\n");
     ImprimirVizinhos(matriz, 3, 2);
 
-    printf("\n\nQuais são os vizinhos do nós (2, 2):");
+    printf("\nQuais são os vizinhos do nós (2, 2):\n");
     ImprimirVizinhos(matriz, 2, 2);
 
     // 2.
     printf("\nLiberando matriz...\n");
     LiberarMatriz(matriz);
+
+    printf("Pressione qualquer tecla para continuar...");
+    scanf("%*c"); // espera o usuário pressionar enter antes de fechar
 
     return 0;
 }

@@ -164,7 +164,6 @@ Matriz *ConsultarValor(Matriz *mat, int i, int j)
     return aux;
 }
 
-// Buscar um valor qualquer. Deve retornar o nó onde o valor se encontra ou null
 Matriz *BuscarValor(Matriz *mat, int valor)
 {
     if (mat == NULL)
@@ -198,7 +197,6 @@ Matriz *BuscarValor(Matriz *mat, int valor)
     return NULL; // se não encontrar, retorna null
 }
 
-// imprimir o valor dos 4 vizinhos de um nó especificado
 Matriz *ImprimirVizinhos(Matriz *mat, int i, int j)
 {
     Matriz *aux = ConsultarValor(mat, i, j);
@@ -240,10 +238,19 @@ void ImprimirMatriz(Matriz *mat)
     {
         while (auxColuna != NULL)
         {
-            printf(" %d ", auxColuna->valor);
+            if (auxColuna->valor <= 9)
+            {
+                if (auxColuna->valor == 0 || auxColuna->valor == 1)
+                    printf("|" RED "0%d" RESET, auxColuna->valor);
+                else
+                    printf("|" GREEN "0%d" RESET, auxColuna->valor); // formata o número para ter 2 dígitos
+            }
+            else
+                printf("|" GREEN "%d" RESET, auxColuna->valor);
+
             auxColuna = auxColuna->direita; // vai passando pela linha até o final
         }
-        printf("\n");
+        printf("|\n");
         auxLinha = auxLinha->baixo; // move uma linha pra baixo
         auxColuna = auxLinha;       // volta para printar o primeiro da próxima linha
     }
