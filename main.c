@@ -256,6 +256,9 @@ int main(void)
         }
         break;
         case 0:
+            LiberarMatriz(matriz);
+            LiberarMatriz(matriz2);
+
             printf(GREEN "\nSaindo...\n" RESET);
             continuar = 0;
 
