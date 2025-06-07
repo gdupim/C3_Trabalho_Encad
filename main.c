@@ -42,17 +42,17 @@ int main(void)
     ImprimirMatriz(matriz);
 
     // 4.
-    printf("\nValor na 3ª linha da 2ª coluna: %d\n", *((int *)ConsultarValor(matriz, 3, 2)));
+    printf("\nValor na 3a linha da 2a coluna: %d\n", *((int *)ConsultarValor(matriz, 3, 2)));
 
     // 5.
     printf("\nBuscando valor 10 na matriz:\n");
     BuscarValor(matriz, 10);
 
     // 6.
-    printf("\n\nQuais são os vizinhos do nó (3, 2):\n");
+    printf("\n\nQuais sao os vizinhos do no (3, 2):\n");
     ImprimirVizinhos(matriz, 3, 2);
 
-    printf("\nQuais são os vizinhos do nós (2, 2):\n");
+    printf("\nQuais sao os vizinhos dos nos (2, 2):\n");
     ImprimirVizinhos(matriz, 2, 2);
 
     // 2.

@@ -168,7 +168,7 @@ Matriz *BuscarValor(Matriz *mat, int valor)
 {
     if (mat == NULL)
     {
-        printf("A matriz nao existe");
+        printf("A matriz nao existe.");
         return NULL;
     }
 
@@ -184,7 +184,7 @@ Matriz *BuscarValor(Matriz *mat, int valor)
         {
             if (auxColuna->valor == valor)
             {
-                printf(">Valor encontrado na posição (%d, %d)", linha, coluna);
+                printf(">Valor encontrado na posicao (%d, %d)", linha, coluna);
                 return auxColuna; // retorna o nó
             }
             auxColuna = auxColuna->direita;
@@ -202,7 +202,7 @@ Matriz *ImprimirVizinhos(Matriz *mat, int i, int j)
     Matriz *aux = ConsultarValor(mat, i, j);
     if (aux == NULL)
     {
-        printf("Nó não encontrado.\n");
+        printf("No nao encontrado.\n");
         return NULL;
     }
 
