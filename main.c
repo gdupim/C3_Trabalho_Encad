@@ -70,6 +70,7 @@ int main(void)
                 printf(RED "\nAs duas matrizes ja foram criadas...\n" RESET);
             }
 
+            getchar();
             espera();
         }
         break;
@@ -91,6 +92,7 @@ int main(void)
                 printf("%d\n", VerificarLinhas(matriz2));
             }
 
+            getchar();
             espera();
         }
         break;
@@ -114,6 +116,7 @@ int main(void)
                 getchar();
             }
 
+            getchar();
             espera();
         }
         break;
@@ -141,6 +144,7 @@ int main(void)
                 InserirValor(matriz2, i, j, valor);
             }
 
+            getchar();
             espera();
         }
         break;
@@ -168,6 +172,7 @@ int main(void)
                 printf("\nValor do no: %d", no->valor);
             }
 
+            getchar();
             espera();
         }
         break;
@@ -189,6 +194,7 @@ int main(void)
                 BuscarValor(matriz2, valor);
             }
 
+            getchar();
             espera();
         }
         break;
@@ -208,6 +214,7 @@ int main(void)
                 ImprimirMatriz(matriz2);
             }
 
+            getchar();
             espera();
         }
         break;
@@ -232,6 +239,7 @@ int main(void)
                 ImprimirVizinhos(matriz2, i, j);
             }
 
+            getchar();
             espera();
         }
         break;
@@ -242,6 +250,7 @@ int main(void)
             printf("\nA matriz somada e: \n");
             ImprimirMatriz(soma);
 
+            getchar();
             espera();
         }
         break;
@@ -252,6 +261,7 @@ int main(void)
             printf("\nA matriz subtraida e: \n");
             ImprimirMatriz(sub);
 
+            getchar();
             espera();
         }
         break;
@@ -262,11 +272,13 @@ int main(void)
             printf(GREEN "\nSaindo...\n" RESET);
             continuar = 0;
 
+            getchar();
             espera();
             break;
         default:
             printf(RED "\nEscolha invalida, tente novamente...\n" RESET);
 
+            getchar();
             espera();
             break;
         }
