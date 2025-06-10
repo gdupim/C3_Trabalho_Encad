@@ -1,7 +1,3 @@
-//
-// Created by capit on 13/05/2025.
-//
-
 #ifndef MATRIZ_H
 #define MATRIZ_H
 
